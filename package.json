@@ -1,0 +1,27 @@
+{
+  "name": "MyOwnLandingPage",
+  "version": "1.0.0",
+  "description": "My personal landing",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxdevelopment/MyOwnLandingPage"
+  },
+  "author": "MaxDevBy (maxdev.by)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maxdevelopment/MyOwnLandingPage/issues"
+  },
+  "homepage": "https://github.com/maxdevelopment/MyOwnLandingPage",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.2.3",
+    "morgan": "^1.6.1",
+    "socket.io": "^1.3.7"
+  }
+}
