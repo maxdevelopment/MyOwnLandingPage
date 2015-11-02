@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="NotesList">
 <head>
     <meta charset="UTF-8">
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var client = '';
+        var socket = io();
+        socket.on('connect', function() {
+            client = socket.io.engine.id;
+        });
+    </script>
     <title></title>
 </head>
 <body>
-    <p>notes</p>
+    <div ng-controller="NotesListController">
+        <div ng-repeat="note in notes">
+
+            <div ng-show="!note.view" style="display: inline"><b>{{ note.text }}</b></div>
+            <div ng-show="note.view" style="display: inline"><input type="text" ng-model="update.text" ng-init="update.text = note.text"/></div>
+
+            <div ng-show="!note.view" style="display: inline"><button ng-click="deleteNote(note._id)">del</button></div>
+            <div ng-show="!note.view" style="display: inline"><button ng-click="editNote($index)">edit</button></div>
+            <div ng-show="note.view" style="display: inline"><button ng-click="updateNote(note._id, $index, update.text)">update</button></div>
+
+        </div>
+        <button ng-click="addNote()">add</button>
+        <input type="text" ng-model="formData.text" placeholder="note">
+    </div>
+
+
+    <!-- Modules -->
+    <script src="/js/appNotesList.js"></script>
+
+
+    <!-- Controllers -->
+    <script src="/js/controllers/NotesListController.js"></script>
+
+    <!-- Directives -->
+
+    <!-- Services -->
 </body>
 </html>

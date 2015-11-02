@@ -35,6 +35,66 @@ var NoteSchema = new mongoose.Schema({
 });
 var Note = mongoose.model('Note', NoteSchema);
 
+//Socket IO
+io.on('connection', function(socket){
+
+    User.create({ socketId: socket.id}, function(err) {
+        if (err) return console.error(err);
+    });
+
+    socket.on('disconnect', function(){
+        Note.remove({ _creator: socket.id}, function(err) {
+            if (err) return console.error(err);
+        });
+
+        User.remove({ socketId: socket.id}, function(err) {
+            if (err) return console.error(err);
+        });
+    });
+});
+
+//API Routes
+
+//update
+app.put('/api/notes', function(req, res) {
+    Note.update({ _id : req.body.dbId }, { text: req.body.msg }, function(err) {
+        if (err) res.send(err);
+        res.send().end();
+    });
+});
+//get all *NOT USED*
+app.get('/api/notes', function(req, res) {
+    res.send().end();
+});
+
+//create
+app.post('/api/notes', function(req, res) {
+    Note.create({
+        text: req.body.text,
+        _creator: req.body.client
+    }, function(err) {
+        if (err) res.send(err);
+
+        Note.find({_creator: req.body.client}, function(err, notes) {
+            if (err) res.send(err);
+            res.json(notes);
+        });
+    });
+});
+//delete
+app.delete('/api/notes/:noteId/:clientId', function(req, res) {
+    Note.remove({
+        _id : req.params.noteId
+    }, function(err) {
+        if (err) res.send(err);
+
+        Note.find({_creator: req.params.clientId}, function(err, notes) {
+            if (err) res.send(err);
+            res.json(notes);
+        });
+    });
+});
+
 //Routes
 app.get('/notes', function(req, res) {
     res.sendFile('notes.html', {root: __dirname + '/public'}, function(err) {
