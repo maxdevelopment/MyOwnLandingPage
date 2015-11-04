@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="Main">
 <head>
     <meta charset="UTF-8">
+    <script src="/bower_components/angular/angular.min.js"></script>
     <title></title>
 </head>
 <body>
-    <p>main</p>
+
+<div id="header">
+    <a href="/notes">Notes</a>
+</div>
+
+<div id="main">
+    <div ng-controller="MainController">
+        <a href="#" ng-click="LanguageSwitch('en')">Eng&nbsp;</a>
+        /
+        <a href="#" ng-click="LanguageSwitch('ru')">&nbsp;Rus</a>
+        <main-screen txt="txt"></main-screen>
+    </div>
+</div>
+
+<div id="footer">
+
+</div>
+
+    <!-- Modules -->
+    <script src="/js/appMain.js"></script>
+
+
+    <!-- Controllers -->
+    <script src="/js/controllers/MainController.js"></script>
+
+    <!-- Directives -->
+    <script src="/js/directives/MainDirective.js"></script>
+
+    <!-- Services -->
 </body>
 </html>
