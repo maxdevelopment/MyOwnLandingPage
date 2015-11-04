@@ -1,4 +1,4 @@
-var appMain = angular.module('Main', []);
+var appMain = angular.module('Main', ['ngDialog', 'ngMessages']);
 
 appMain.factory('texts', ['$http', function($http) {
     var GetLanguageText = {};

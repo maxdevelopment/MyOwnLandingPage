@@ -12,6 +12,8 @@
   "dependencies": {
     "angular": "~1.4.7",
     "angular-resource": "~1.4.7",
-    "angular-route": "~1.4.7"
+    "angular-route": "~1.4.7",
+    "ng-dialog": "~0.5.5",
+    "angular-messages": "~1.4.7"
   }
 }

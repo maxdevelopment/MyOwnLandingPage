@@ -1,0 +1,33 @@
+<div class="dialog-contents">
+<form name="userForm" novalidate ng-submit="submitForm(userForm.$valid)">
+    <span>{{txt.modalName}}</span>
+    <input type="text" name="name"
+           ng-model="form_data.name"
+           ng-minlength="3"
+           ng-maxlength="15"
+           required ng-pattern="/^(\D)+$/" placeholder="{{txt.modalName}}">
+
+    <div ng-messages="userForm.name.$error" ng-if="userForm.name.$touched">
+        <p ng-message="minlength">{{txt.modalMinLengthName}}</p>
+        <p ng-message="maxlength">{{txt.modalMaxLengthName}}</p>
+        <p ng-message="required">{{txt.modalRequired}}</p>
+        <p ng-message="pattern">{{txt.modalNamePattern}}</p>
+    </div>
+
+    <br />
+
+    <span>{{txt.modalMessage}}</span>
+    <textarea name="message"
+              ng-model="form_data.message"
+              ng-minlength="3"
+              required ng-pattern="/^[^`\^\{}\<\>\[\]']+$/i" placeholder="{{txt.modalMessage}}"></textarea>
+
+    <div ng-messages="userForm.message.$error" ng-if="userForm.message.$touched">
+        <p ng-message="minlength">{{txt.modalMinLengthName}}</p>
+        <p ng-message="required">{{txt.modalMsgRequired}}</p>
+        <p ng-message="pattern">{{txt.modalMsgPattern}}</p>
+    </div>
+
+    <button type="submit">{{txt.modalSubmit}}</button>
+</form>
+</div>

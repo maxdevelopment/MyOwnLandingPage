@@ -2,7 +2,12 @@
 <html ng-app="Main">
 <head>
     <meta charset="UTF-8">
-    <script src="/bower_components/angular/angular.min.js"></script>
+    <link href="css/main.css" rel="stylesheet" type="text/css" >
+    <link href="bower_components/ng-dialog/css/ngDialog.min.css" rel="stylesheet" type="text/css" >
+    <link href="bower_components/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet" type="text/css" >
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/ng-dialog/js/ngDialog.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
     <title></title>
 </head>
 <body>
@@ -16,7 +21,10 @@
         <a href="#" ng-click="LanguageSwitch('en')">Eng&nbsp;</a>
         /
         <a href="#" ng-click="LanguageSwitch('ru')">&nbsp;Rus</a>
+
         <main-screen txt="txt"></main-screen>
+
+        <button href="#" ng-click="clickToOpen()">{{txt.modalOpenButton}}</button>
     </div>
 </div>
 

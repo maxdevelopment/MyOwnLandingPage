@@ -1,8 +1,30 @@
 {
   "en" : {
-    "title" : "Hello World"
+    "title" : "English",
+    "modalOpenButton": "Contact me",
+    "modalName": "Your name",
+    "modalMessage": "Your message",
+    "modalMinLengthName": "Minimal 3 symbols",
+    "modalMaxLengthName": "Maximum 15 symbols",
+    "modalRequired": "Please, enter your name",
+    "modalNamePattern": "Sorry, only letters",
+    "modalMsgRequired": "Please, write your message",
+    "modalMsgPattern": "wrong symbol",
+    "modalSubmit": "send",
+    "modalSecondClose": "Close"
   },
   "ru" : {
-    "title" : "Привет Мир"
+    "title" : "Русский",
+    "modalOpenButton": "Связаться со мной",
+    "modalName": "Ваше имя",
+    "modalMessage": "Ваше сообщение",
+    "modalMinLengthName": "Минимально 3 символа",
+    "modalMaxLengthName": "Максимально 15 символов",
+    "modalRequired": "Пожалуйста, укажите Ваше имя",
+    "modalNamePattern": "Извините, только буквы",
+    "modalMsgRequired": "Пожалуйста, укажите Ваше сообщение",
+    "modalMsgPattern": "не верный символ",
+    "modalSubmit": "отправить",
+    "modalSecondClose": "Закрыть"
   }
 }
