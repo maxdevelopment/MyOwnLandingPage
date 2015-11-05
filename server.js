@@ -5,6 +5,7 @@ var express         = require('express');           //express framework
 var app             = express();                    //app with express
 var http            = require('http').Server(app);
 var io              = require('socket.io')(http);   // socket.io
+var nodemailer      = require('nodemailer');        // Node Mail module
 var mongoose		= require('mongoose');			// mongoose for mongodb
 var morgan			= require('morgan');			// log requests to the console (express4)
 var bodyParser		= require('body-parser');		// pull information from HTML POST (express4)
@@ -93,6 +94,36 @@ app.delete('/api/notes/:noteId/:clientId', function(req, res) {
             res.json(notes);
         });
     });
+});
+
+//Route SendMail
+app.post('/send/msg', function(req, res) {
+    /*TEMPORARY DISABLED*/
+    /*
+    var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'xxxx@xxx.com',
+            pass: 'xxxxxx'
+        }
+    });
+
+    var mailOptions = {
+        from: 'Test MSG',
+        to: 'xxxx@xxx.com, xxxx@xxx.by',
+        subject: '',
+        text: '',
+        html: ''
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            return console.log(error);
+        }
+        console.log('Message sent: ' + info.response);
+    });
+    */
+    res.send().end();
 });
 
 //Routes

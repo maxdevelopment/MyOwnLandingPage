@@ -1,4 +1,4 @@
-var appMain = angular.module('Main', ['ngDialog', 'ngMessages']);
+var appMain = angular.module('Main', ['ngDialog', 'ngMessages', 'ngResource']);
 
 appMain.factory('texts', ['$http', function($http) {
     var GetLanguageText = {};
@@ -12,4 +12,10 @@ appMain.factory('texts', ['$http', function($http) {
         return TextLang;
     };
     return GetLanguageText;
+}]);
+
+appMain.factory('SendMessage', ['$resource', function($resource) {
+    return $resource('/send/msg', {}, {
+        'SendMsg' : {method: 'POST', isArray: true}
+    });
 }]);
