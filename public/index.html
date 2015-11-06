@@ -11,29 +11,15 @@
     <script src="bower_components/ng-dialog/js/ngDialog.min.js"></script>
     <script src="bower_components/angular-messages/angular-messages.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
-    <title></title>
+    <title>MaxDev.by</title>
 </head>
-<body>
+<body ng-controller="MainController">
 
-<div id="header">
-    <a href="/notes">Notes</a>
-</div>
+    <top-panel top="txt"></top-panel>
 
-<div id="main">
-    <div ng-controller="MainController">
-        <a href="#" ng-click="LanguageSwitch('en')">Eng&nbsp;</a>
-        /
-        <a href="#" ng-click="LanguageSwitch('ru')">&nbsp;Rus</a>
+    <main-screen txt="txt"></main-screen>
 
-        <main-screen txt="txt"></main-screen>
-
-        <button href="#" ng-click="clickToOpen()">{{txt.modalOpenButton}}</button>
-    </div>
-</div>
-
-<div id="footer">
-
-</div>
+    <footer-screen footer="txt"></footer-screen>
 
     <!-- Modules -->
     <script src="/js/appMain.js"></script>

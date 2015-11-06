@@ -15,7 +15,7 @@ appMain.controller('MainController', ['$scope', '$window', 'texts', 'ngDialog', 
 
     $scope.clickToOpen = function () {
         ngDialog.open({
-            template: 'tpl/ngDialog.html',
+            template: '/tpl/ngdialog/ngDialog.html',
             plain: false,
             showClose: false,
             cache: true,
@@ -26,7 +26,7 @@ appMain.controller('MainController', ['$scope', '$window', 'texts', 'ngDialog', 
     $scope.openSecond = function () {
         ngDialog.close();
         ngDialog.open({
-            template: 'tpl/ngDialog_second.html',
+            template: '/tpl/ngdialog/ngDialog_second.html',
             plain: false,
             showClose: false,
             cache: true,

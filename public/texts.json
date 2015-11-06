@@ -11,7 +11,8 @@
     "modalMsgRequired": "Please, write your message",
     "modalMsgPattern": "wrong symbol",
     "modalSubmit": "send",
-    "modalSecondClose": "Close"
+    "modalSecondClose": "Close",
+    "footerText" : "footer"
   },
   "ru" : {
     "title" : "Русский",
@@ -25,6 +26,7 @@
     "modalMsgRequired": "Пожалуйста, укажите Ваше сообщение",
     "modalMsgPattern": "не верный символ",
     "modalSubmit": "отправить",
-    "modalSecondClose": "Закрыть"
+    "modalSecondClose": "Закрыть",
+    "footerText" : "footer"
   }
 }
