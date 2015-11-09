@@ -12,7 +12,7 @@
     "modalMsgPattern": "wrong symbol",
     "modalSubmit": "send",
     "modalSecondClose": "Close",
-    "footerText" : "footer"
+    "footerText" : "2015, MaxDev.by"
   },
   "ru" : {
     "title" : "Русский",
@@ -27,6 +27,6 @@
     "modalMsgPattern": "не верный символ",
     "modalSubmit": "отправить",
     "modalSecondClose": "Закрыть",
-    "footerText" : "footer"
+    "footerText" : "2015, MaxDev.by"
   }
 }

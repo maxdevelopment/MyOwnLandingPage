@@ -1,3 +1,20 @@
-<a href="#" ng-click="$parent.LanguageSwitch('en')">Eng&nbsp;</a>
-/
-<a href="#" ng-click="$parent.LanguageSwitch('ru')">&nbsp;Rus</a>
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top animated slideInDown">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">MaxDev</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a class="custom-color" href="/notes">Notes Demo</a></li>
+            </ul>
+            <div class="navbar-link navbar-right"><a href="#" ng-click="$parent.LanguageSwitch('en')"><img ng-src="img/eng.png" /> English</a></div>
+            <div class="navbar-link navbar-right"><a href="#" ng-click="$parent.LanguageSwitch('ru')"><img ng-src="img/rus.png" /> Russian</a></div>
+        </div>
+    </div>
+</nav>
