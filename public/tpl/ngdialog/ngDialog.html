@@ -1,33 +1,47 @@
-<div class="dialog-contents">
-<form name="userForm" novalidate ng-submit="submitForm(userForm.$valid)">
-    <span>{{txt.modalName}}</span>
-    <input type="text" name="name"
-           ng-model="form_data.name"
-           ng-minlength="3"
-           ng-maxlength="15"
-           required ng-pattern="/^(\D)+$/" placeholder="{{txt.modalName}}">
+<form name="userForm" novalidate ng-submit="submitForm(userForm.$valid)" class="form-horizontal">
+    <div class="form-group form-group-lg">
+        <label class="col-md-4 control-label">{{txt.modalName}}</label>
+        <div class="col-md-8">
+            <input type="text" name="name"
+                   ng-model="form_data.name"
+                   ng-minlength="3"
+                   ng-maxlength="15"
+                   class="form-control"
+                   required ng-pattern="/^(\D)+$/" placeholder="{{txt.modalName}}">
+        </div>
 
-    <div ng-messages="userForm.name.$error" ng-if="userForm.name.$touched">
-        <p ng-message="minlength">{{txt.modalMinLengthName}}</p>
-        <p ng-message="maxlength">{{txt.modalMaxLengthName}}</p>
-        <p ng-message="required">{{txt.modalRequired}}</p>
-        <p ng-message="pattern">{{txt.modalNamePattern}}</p>
+        <div class="col-md-offset-4">
+            <div ng-messages="userForm.name.$error" ng-if="userForm.name.$touched" class="err_msg small">
+                <p class="text-danger" ng-message="minlength">{{txt.modalMinLengthName}}</p>
+                <p class="text-danger" ng-message="maxlength">{{txt.modalMaxLengthName}}</p>
+                <p class="text-danger" ng-message="required">{{txt.modalRequired}}</p>
+                <p class="text-danger" ng-message="pattern">{{txt.modalNamePattern}}</p>
+            </div>
+        </div>
     </div>
 
-    <br />
+    <div class="form-group form-group-lg">
+        <label class="col-md-4 control-label">{{txt.modalMessage}}</label>
+        <div class="col-md-8">
+            <textarea name="message"
+                      ng-model="form_data.message"
+                      ng-minlength="3"
+                      style="resize:none" cols="36" rows="5"
+                      required ng-pattern="/^[^`\^\{}\<\>\[\]']+$/i" placeholder="{{txt.modalMessage}}"></textarea>
+        </div>
 
-    <span>{{txt.modalMessage}}</span>
-    <textarea name="message"
-              ng-model="form_data.message"
-              ng-minlength="3"
-              required ng-pattern="/^[^`\^\{}\<\>\[\]']+$/i" placeholder="{{txt.modalMessage}}"></textarea>
-
-    <div ng-messages="userForm.message.$error" ng-if="userForm.message.$touched">
-        <p ng-message="minlength">{{txt.modalMinLengthName}}</p>
-        <p ng-message="required">{{txt.modalMsgRequired}}</p>
-        <p ng-message="pattern">{{txt.modalMsgPattern}}</p>
+        <div class="col-md-offset-4">
+            <div ng-messages="userForm.message.$error" ng-if="userForm.message.$touched" class="err_msg small">
+                <p class="text-danger" ng-message="minlength">{{txt.modalMinLengthName}}</p>
+                <p class="text-danger" ng-message="required">{{txt.modalMsgRequired}}</p>
+                <p class="text-danger" ng-message="pattern">{{txt.modalMsgPattern}}</p>
+            </div>
+        </div>
     </div>
 
-    <button type="submit">{{txt.modalSubmit}}</button>
+    <div class="form-group">
+        <div class="col-md-4 col-md-offset-4">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">{{txt.modalSubmit}}</button>
+        </div>
+    </div>
 </form>
-</div>

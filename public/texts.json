@@ -10,7 +10,7 @@
     "modalNamePattern": "Sorry, only letters",
     "modalMsgRequired": "Please, write your message",
     "modalMsgPattern": "wrong symbol",
-    "modalSubmit": "send",
+    "modalSubmit": "Send",
     "modalSecondClose": "Close",
     "footerText" : "2015, MaxDev.by"
   },
@@ -25,7 +25,7 @@
     "modalNamePattern": "Извините, только буквы",
     "modalMsgRequired": "Пожалуйста, укажите Ваше сообщение",
     "modalMsgPattern": "не верный символ",
-    "modalSubmit": "отправить",
+    "modalSubmit": "Отправить",
     "modalSecondClose": "Закрыть",
     "footerText" : "2015, MaxDev.by"
   }
