@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html ng-app="NotesList">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <meta charset="UTF-8">
+    <title>MaxDev.by</title>
+    <link href="bower_components/normalize-css/normalize.css" rel="stylesheet" type="text/css" >
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" >
+    <link href="css/main.css" rel="stylesheet" type="text/css" >
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css" >
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
@@ -15,25 +24,59 @@
             client = socket.io.engine.id;
         });
     </script>
-    <title>MaxDev.by</title>
 </head>
 <body>
-    <div ng-controller="NotesListController">
-        <div ng-repeat="note in notes">
-
-            <div ng-show="!note.view" style="display: inline"><b>{{ note.text }}</b></div>
-            <div ng-show="note.view" style="display: inline"><input type="text" ng-model="update.text" ng-init="update.text = note.text"/></div>
-
-            <div ng-show="!note.view" style="display: inline"><button ng-click="deleteNote(note._id)">del</button></div>
-            <div ng-show="!note.view" style="display: inline"><button ng-click="editNote($index)">edit</button></div>
-            <div ng-show="note.view" style="display: inline"><button ng-click="updateNote(note._id, $index, update.text)">update</button></div>
-
-        </div>
-        <button ng-click="addNote()">add</button>
-        <input type="text" ng-model="formData.text" placeholder="note">
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top animated slideInDown">
+    <div class="container">
+        <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> Back</a>
     </div>
+</nav>
+<div class="container">
+    <div class="row notes">
+        <div ng-controller="NotesListController">
+            <div ng-repeat="note in notes" class="col-md-6 col-md-offset-3">
+                <div ng-show="!note.view">
+                    <div class="container-fluid">
+                        <div class="row notes">
+                            <div class="col-xs-12 col-sm-6 col-md-8">{{ note.text }}</div>
+
+                            <div class="col-xs-6 col-md-4">
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-danger btn-xs" ng-click="deleteNote(note._id)">del</button>
+                                    <button type="button" class="btn btn-success btn-xs" ng-click="editNote($index)">edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
+                <div ng-show="note.view">
+                    <div class="col-md-6 col-md-offset-3 notes">
+                        <div class="input-group">
+                            <div ng-class="{ 'animated bounceInLeft' : $index === updateMoveLeft}">
+                                <input type="text" class="form-control" ng-model="update.text" ng-init="update.text = note.text"/>
+                            </div>
+                            <span class="input-group-btn">
+                                <div ng-class="{ 'animated bounceInRight' : $index === updateMoveRight}">
+                                    <button class="btn btn-info" ng-click="updateNote(note._id, $index, update.text)">update</button>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-3 notes">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="formData.text" placeholder="Add Note">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" ng-click="addNote()">Add Note</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- Modules -->
     <script src="/js/appNotesList.js"></script>
 

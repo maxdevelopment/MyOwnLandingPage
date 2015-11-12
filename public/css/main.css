@@ -63,3 +63,6 @@ a:hover, a:focus {
 .err_msg {
     padding-left: 15px;
 }
+.notes {
+    padding-top: 5px;
+}

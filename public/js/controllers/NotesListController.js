@@ -17,6 +17,8 @@ appNotesList.controller('NotesListController', ['$scope', '$routeParams', 'Notes
 
     $scope.editNote = function(index) {
         $scope.notes[index].view = true;
+        $scope.updateMoveLeft = index;
+        $scope.updateMoveRight = index;
     };
 
     $scope.updateNote = function(id, index, msg) {
