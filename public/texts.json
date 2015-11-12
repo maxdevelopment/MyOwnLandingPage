@@ -11,6 +11,7 @@
     "modalMsgRequired": "Please, write your message",
     "modalMsgPattern": "wrong symbol",
     "modalSubmit": "Send",
+    "modelSecondMsg": "Thank you. I will contact you as soon as possible.",
     "modalSecondClose": "Close",
     "footerText" : "2015, MaxDev.by"
   },
@@ -26,6 +27,7 @@
     "modalMsgRequired": "Пожалуйста, укажите Ваше сообщение",
     "modalMsgPattern": "не верный символ",
     "modalSubmit": "Отправить",
+    "modelSecondMsg": "Спасибо. Я свяжусь с вами в самое ближайшее время.",
     "modalSecondClose": "Закрыть",
     "footerText" : "2015, MaxDev.by"
   }
