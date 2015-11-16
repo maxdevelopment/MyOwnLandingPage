@@ -2,8 +2,9 @@
     <div class="container">
 
 
-                <h1>{{txt.title}}</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+                <h2 class="jbt_title">{{txt.jumbotronTitle}}</h2>
+
+                <p>{{txt.jumbotronMsg}}</p>
 
 
                 <button class="btn btn-primary btn-lg animated swing" ng-click="$parent.clickToOpen()">{{txt.modalOpenButton}}</button>
@@ -12,19 +13,29 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container animated pulse">
     <div class="row">
-        <div class="col-md-6">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <div class="col-md-6 col-md-offset-3"><h3 class="text-center txt_main_title">{{txt.mainTitle}}</h3></div>
+        <div class="col-xs-6 text-right">
+            <ul class="list-unstyled txt_main">
+                <li>{{txt.mainLeft1}}</li>
+                <li>{{txt.mainLeft2}}</li>
+                <li>{{txt.mainLeft3}}</li>
+                <li>{{txt.mainLeft4}}</li>
+                <li>{{txt.mainLeft5}}</li>
+                <li>{{txt.mainLeft6}}</li>
+            </ul>
         </div>
-        <div class="col-md-6">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <div class="col-xs-6">
+            <ul class="list-unstyled txt_main">
+                <li>{{txt.mainRight1}}</li>
+                <li>{{txt.mainRight2}}</li>
+                <li>{{txt.mainRight3}}</li>
+                <li>{{txt.mainRight4}}</li>
+                <li>{{txt.mainRight5}}</li>
+                <li>{{txt.mainRight6}}</li>
+            </ul>
         </div>
+        <div class="col-md-6 col-md-offset-3"><p class="text-center txt_footer">{{txt.mainFooter}}</p></div>
     </div>
 </div>

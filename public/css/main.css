@@ -66,3 +66,16 @@ a:hover, a:focus {
 .notes {
     padding-top: 5px;
 }
+.txt_main_title, .txt_main, .txt_footer {
+    color: #34495E;
+}
+.txt_title {
+    font-size: 39px;
+}
+.txt_main {
+    font-size: 25px;
+    margin: 10px 15px;
+}
+.txt_footer {
+    font-size: 18px;
+}

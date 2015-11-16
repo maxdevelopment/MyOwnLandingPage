@@ -7,17 +7,17 @@ var http            = require('http').Server(app);
 var io              = require('socket.io')(http);   // socket.io
 var nodemailer      = require('nodemailer');        // Node Mail module
 var mongoose		= require('mongoose');			// mongoose for mongodb
-var morgan			= require('morgan');			// log requests to the console (express4)
+//var morgan			= require('morgan');			// log requests to the console (express4)
 var bodyParser		= require('body-parser');		// pull information from HTML POST (express4)
 var methodOverride	= require('method-override');	// simulate DELETE and PUT (express4)
 
 //mongo configuration
-mongoose.set('debug', true);                            // mongoose debug mode
+mongoose.set('debug', false);                           // mongoose debug mode
 mongoose.connect('mongodb://localhost:27017/notes');	// connect to mongoDB database
 
 //app settings
 app.use(express.static('public'));           			// set the static files location
-app.use(morgan('dev'));                                 // log every request to the console
+//app.use(morgan('tiny'));                                // log every request to the console
 app.use(bodyParser.json());                             // parse application/json
 app.use(methodOverride());                              // delete & put requests
 
