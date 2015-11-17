@@ -3,4 +3,4 @@ NodeJS
 MongoDB
 AngularJS
 
-MaxDevBy (maxdev.by) Max Naranovich
+MaxDevBy (<a href="http://maxdev.by">maxdev.by</a>) Max Naranovich
