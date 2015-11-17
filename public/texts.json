@@ -1,8 +1,8 @@
 {
   "en" : {
-    "jumbotronTitle" : "You've got ideas? I'm going to realize them",
-    "jumbotronMsg" : "Web development of any level from personal lending/blog to scalable corporate solutions",
-    "mainTitle": "Related technologies",
+    "jumbotronTitle" : "You've got ideas? I'm going to realize them.",
+    "jumbotronMsg" : "Web development of any level from personal lending, blog to scalable corporate solutions.",
+    "mainTitle": "Technologies:",
     "mainLeft1": "PHP",
     "mainLeft2": "Laravel",
     "mainLeft3": "Magento",
@@ -15,7 +15,7 @@
     "mainRight4": "JavaScript",
     "mainRight5": "jQuery",
     "mainRight6": "AngularJS",
-    "mainFooter": "Linux user experience",
+    "mainFooter": "Experienced Linux user",
     "modalOpenButton": "Contact me",
     "modalName": "Your name",
     "modalMessage": "Your message",
@@ -32,8 +32,8 @@
   },
   "ru" : {
     "jumbotronTitle" : "У Вас есть идеи? Я их реализую.",
-    "jumbotronMsg" : "Веб разработка любой сложности от персонального лендинга, блога до масштабируемых корпоративных решений",
-    "mainTitle": "Используемые технологии:",
+    "jumbotronMsg" : "Веб разработка любой сложности от персонального лендинга, блога до масштабируемых корпоративных решений.",
+    "mainTitle": "Технологии:",
     "mainLeft1": "PHP",
     "mainLeft2": "Laravel",
     "mainLeft3": "Magento",
