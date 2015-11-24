@@ -10,6 +10,7 @@ var mongoose		= require('mongoose');			// mongoose for mongodb
 //var morgan			= require('morgan');			// log requests to the console (express4)
 var bodyParser		= require('body-parser');		// pull information from HTML POST (express4)
 var methodOverride	= require('method-override');	// simulate DELETE and PUT (express4)
+var favicon         = require('serve-favicon');     //favicon
 
 //mongo configuration
 mongoose.set('debug', false);                           // mongoose debug mode
@@ -17,9 +18,10 @@ mongoose.connect('mongodb://localhost:27017/notes');	// connect to mongoDB datab
 
 //app settings
 app.use(express.static('public'));           			// set the static files location
-//app.use(morgan('tiny'));                                // log every request to the console
+//app.use(morgan('debug'));                                // log every request to the console
 app.use(bodyParser.json());                             // parse application/json
 app.use(methodOverride());                              // delete & put requests
+app.use(favicon(__dirname + '/public/img/favicon.ico'));
 
 //define mongoose models
 var UserSchema = new mongoose.Schema({
