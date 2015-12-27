@@ -14,6 +14,7 @@
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
     <script src="socket.io/socket.io.js"></script>
     <script>
         var client = '';
@@ -51,25 +52,52 @@
 
                 <div ng-show="note.view">
                     <div class="col-md-6 col-md-offset-3 notes">
-                        <div class="input-group">
-                            <div ng-class="{ 'animated bounceInLeft' : $index === updateMoveLeft}">
-                                <input type="text" class="form-control" ng-model="update.text" ng-init="update.text = note.text"/>
-                            </div>
-                            <span class="input-group-btn">
-                                <div ng-class="{ 'animated bounceInRight' : $index === updateMoveRight}">
-                                    <button class="btn btn-info" ng-click="updateNote(note._id, $index, update.text)">update</button>
+                        <div ng-form="editForm" novalidate>
+                            <div class="input-group">
+                                <div ng-class="{ 'animated bounceInLeft' : $index === updateMoveLeft}">
+                                    <input type="text" name="editText"
+                                           ng-minlength="3"
+                                           ng-maxlength="50"
+                                           ng-model="update.text"
+                                           class="form-control"
+                                           required ng-pattern="/^[^`\^\{}\<\>\[\]']+$/i" ng-init="update.text = note.text"/>
                                 </div>
-                            </span>
+                                <span class="input-group-btn">
+                                    <div ng-class="{ 'animated bounceInRight' : $index === updateMoveRight}">
+                                        <button class="btn btn-info" ng-click="updateNote(note._id, $index, update.text, editForm.$valid)">update</button>
+                                    </div>
+                                </span>
+                            </div>
+                            <div ng-messages="editForm.editText.$error" ng-if="editForm.$submitted || editForm.editText.$dirty" class="err_msg small">
+                                <p class="text-danger" ng-message="minlength">Minimum length 3 symbols</p>
+                                <p class="text-danger" ng-message="maxlength">Maximum length 50 symbols</p>
+                                <p class="text-danger" ng-message="required">Message required</p>
+                                <p class="text-danger" ng-message="pattern">Wrong symbol(s)</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-md-offset-3 notes">
                 <div class="input-group">
-                    <input type="text" class="form-control" ng-model="formData.text" placeholder="Add Note">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" ng-click="addNote()">Add Note</button>
-                    </span>
+                    <form name="noteForm" novalidate ng-submit="addNote(noteForm.$valid)" class="form-inline">
+                        <div class="form-group">
+                            <input type="text" name="text"
+                                   ng-minlength="3"
+                                   ng-maxlength="50"
+                                   ng-model="formData.text"
+                                   class="form-control"
+                                   required ng-pattern="/^[^`\^\{}\<\>\[\]']+$/i" placeholder="Add Note">
+                        </div>
+                            <button class="btn btn-primary" type="submit">Add Note</button>
+
+                        <div ng-messages="noteForm.text.$error" ng-if="noteForm.$submitted || noteForm.text.$dirty" class="err_msg small">
+                            <p class="text-danger" ng-message="minlength">Minimum length 3 symbols</p>
+                            <p class="text-danger" ng-message="maxlength">Maximum length 50 symbols</p>
+                            <p class="text-danger" ng-message="required">Message required</p>
+                            <p class="text-danger" ng-message="pattern">Wrong symbol(s)</p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

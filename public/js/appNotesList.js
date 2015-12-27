@@ -1,4 +1,4 @@
-var appNotesList = angular.module('NotesList', ['ngResource', 'ngRoute']);
+var appNotesList = angular.module('NotesList', ['ngResource', 'ngMessages', 'ngRoute']);
 
 appNotesList.factory('Notes', ['$resource', function($resource) {
     return $resource('/api/notes/:noteId/:clientId', {}, {
